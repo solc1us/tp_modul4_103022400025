@@ -1,2 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using TP_MODUL4_103022400025;
+
+// Inisiasi kelas KodePos
+KodePos kodePos = new KodePos();
+// Daftar kelurahan yang mau dicari kode posnya
+string[] kelurahan = { "Batununggal", "Kujangsari", "Mengger", 
+    "Wates", "Cijaura", "Jatisari", "Margasari", "Sekejati", 
+    "Kebonwaru", "Maleer" };
+
+// Menampilkan tabel kelurahan dan kode pos
+Console.WriteLine("Kelurahan    \t | Kode Pos");
+Console.WriteLine("-------------------------");
+foreach (var k in kelurahan)
+{
+    // Mendapatkan kode pos untuk setiap kelurahan
+    int kode = kodePos.getKodePos(k);
+    Console.WriteLine($"{k}    \t | {kode}");
+}
