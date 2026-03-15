@@ -1,19 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using TP_MODUL4_103022400025;
 
-// Inisiasi kelas KodePos
-KodePos kodePos = new KodePos();
-// Daftar kelurahan yang mau dicari kode posnya
-string[] kelurahan = { "Batununggal", "Kujangsari", "Mengger", 
-    "Wates", "Cijaura", "Jatisari", "Margasari", "Sekejati", 
-    "Kebonwaru", "Maleer" };
+Console.WriteLine("\n=== Simulasi DoorMachine ===");
 
-// Menampilkan tabel kelurahan dan kode pos
-Console.WriteLine("Kelurahan    \t | Kode Pos");
-Console.WriteLine("-------------------------");
-foreach (var k in kelurahan)
-{
-    // Mendapatkan kode pos untuk setiap kelurahan
-    int kode = kodePos.getKodePos(k);
-    Console.WriteLine($"{k}    \t | {kode}");
-}
+// Inisiasi DoorMachine (state awal: Terkunci)
+DoorMachine door = new DoorMachine();
+
+// Simulasi perubahan state
+door.BukaPintu();
+door.KunciPintu();
+door.KunciPintu();
+door.BukaPintu();
+door.BukaPintu();
